@@ -35,7 +35,7 @@ public class UserController {
     @GetMapping("doctors")
     public ResponseEntity<?> GetDoctors(
             @RequestParam(name = "page", required = false)Integer page,
-            @RequestParam(name = "page", required = false)Integer pageSize
+            @RequestParam(name = "pageSize", required = false)Integer pageSize
     ){
         page = page == null?1:page;
         pageSize = pageSize == null?3:pageSize;
@@ -52,7 +52,7 @@ public class UserController {
     @GetMapping("users")
     public ResponseEntity<?>GetUsers(
             @RequestParam(name = "page", required = false)Integer page,
-            @RequestParam(name = "page", required = false)Integer pageSize
+            @RequestParam(name = "pageSize", required = false)Integer pageSize
     ){
         page = page == null?1:page;
         pageSize = pageSize == null?3:pageSize;
