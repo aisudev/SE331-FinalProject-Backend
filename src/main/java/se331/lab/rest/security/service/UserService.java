@@ -1,6 +1,7 @@
 package se331.lab.rest.security.service;
 
 import org.springframework.data.domain.Page;
+import se331.lab.rest.security.controller.UpdateUserForm;
 import se331.lab.rest.security.entity.User;
 
 public interface UserService {
@@ -16,4 +17,5 @@ public interface UserService {
     User roleToAdmin(Long id);
     User roleToDoctor(Long id);
     User roleToPatient(Long id);
+    User updateUser(Long id, UpdateUserForm form);
 }

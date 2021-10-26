@@ -93,4 +93,35 @@ public class UserController {
       User user = userService.updateComment(form.id, form.comment);
       return ResponseEntity.ok(LabMapper.INSTANCE.getUser(user));
     }
+
+    @PutMapping("user/{id}")
+    public ResponseEntity<?>UpdateToUser(
+            @PathVariable(name = "id")Long id,
+            @RequestBody() UpdateUserForm form
+            ){
+                User user = userService.updateUser(id, form);
+                if(user == null){
+                    return ResponseEntity.badRequest().build();
+                }
+
+                return new ResponseEntity<>(LabMapper.INSTANCE.getUser(user), HttpStatus.OK);
+    }
+
+    @PutMapping("user/roleToAdmin/{id}")
+    public ResponseEntity<?> RoleToAdmin(@PathVariable(name = "id")Long id){
+        User user = userService.roleToAdmin(id);
+        return ResponseEntity.ok(LabMapper.INSTANCE.getUser(user));
+    }
+
+    @PutMapping("user/roleToDoctor/{id}")
+    public ResponseEntity<?> RoleToDoctor(@PathVariable(name = "id")Long id){
+        User user = userService.roleToDoctor(id);
+        return ResponseEntity.ok(LabMapper.INSTANCE.getUser(user));
+    }
+
+    @PutMapping("user/roleToPatient/{id}")
+    public ResponseEntity<?> RoleToPatient(@PathVariable(name = "id")Long id){
+        User user = userService.roleToPatient(id);
+        return ResponseEntity.ok(LabMapper.INSTANCE.getUser(user));
+    }
 }

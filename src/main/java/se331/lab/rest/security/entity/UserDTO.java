@@ -16,6 +16,8 @@ import java.util.List;
 public class UserDTO {
      Long id;
      String username;
+     String firstname;
+     String lastname;
      String address;
      Integer age;
      String img;

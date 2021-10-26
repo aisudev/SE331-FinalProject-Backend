@@ -6,6 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import se331.lab.rest.entity.Vaccine;
 import se331.lab.rest.repository.VaccineRepository;
+import se331.lab.rest.security.controller.UpdateUserForm;
 import se331.lab.rest.security.entity.Authority;
 import se331.lab.rest.security.entity.AuthorityName;
 import se331.lab.rest.security.entity.User;
@@ -100,11 +101,41 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User roleToDoctor(Long id) {
-        return null;
+        Authority authAdmin = authorityRepository.findByName(AuthorityName.ROLE_DOCTOR);
+        User user = userRepository.findById(id).orElse(null);
+        if(user == null){
+            return null;
+        }
+        List<Authority> authorities = new ArrayList<>();
+        authorities.add(authAdmin);
+        user.setAuthorities(authorities);
+        return userRepository.save(user);
     }
 
     @Override
     public User roleToPatient(Long id) {
-        return null;
+        Authority authAdmin = authorityRepository.findByName(AuthorityName.ROLE_PATIENT);
+        User user = userRepository.findById(id).orElse(null);
+        if(user == null){
+            return null;
+        }
+        List<Authority> authorities = new ArrayList<>();
+        authorities.add(authAdmin);
+        user.setAuthorities(authorities);
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User updateUser(Long id, UpdateUserForm form) {
+        User user = userRepository.findById(id).orElse(null);
+        if(user == null){
+            return null;
+        }
+        user.setAddress(form.getAddress());
+        user.setAge(form.getAge());
+        user.setFirstname(form.getFirstname());
+        user.setLastname(form.getLastname());
+
+        return userRepository.save(user);
     }
 }
