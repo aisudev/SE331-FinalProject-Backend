@@ -74,4 +74,11 @@ public class UserServiceImpl implements UserService{
         user.getVaccines().add(vaccine);
         return userRepository.save(user);
     }
+
+    @Override
+    public User updateComment(Long id, String comment) {
+        User user = userRepository.findById(id).orElse(null);
+        user.setComment(comment);
+        return userRepository.save(user);
+    }
 }

@@ -85,4 +85,12 @@ public class UserController {
 
         return ResponseEntity.ok(LabMapper.INSTANCE.getUser(user));
     }
+
+    @PutMapping("doctor/addCommentToUser")
+    public ResponseEntity<?> AddCommentToUser(
+            @RequestBody UpdateCommentForm form
+    ){
+      User user = userService.updateComment(form.id, form.comment);
+      return ResponseEntity.ok(LabMapper.INSTANCE.getUser(user));
+    }
 }

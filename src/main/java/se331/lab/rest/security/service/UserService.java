@@ -12,4 +12,5 @@ public interface UserService {
     Integer size();
     User get(Long id);
     User addVaccineToUser(Long id, Long vaccine_id);
+    User updateComment(Long id, String comment);
 }

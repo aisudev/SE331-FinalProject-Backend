@@ -2,6 +2,8 @@ package se331.lab.rest.util;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
+import se331.lab.rest.entity.Charge;
+import se331.lab.rest.entity.ChargeDTO;
 import se331.lab.rest.entity.Vaccine;
 import se331.lab.rest.entity.VaccineDTO;
 import se331.lab.rest.security.entity.User;
@@ -19,4 +21,7 @@ public interface LabMapper {
 
     VaccineDTO getVaccine(Vaccine vaccine);
     List<VaccineDTO> getVaccine(List<Vaccine> vaccines);
+
+    ChargeDTO getCharge(Charge charge);
+    List<ChargeDTO> getCharge(List<Charge> charges);
 }
