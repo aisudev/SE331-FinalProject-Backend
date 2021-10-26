@@ -27,7 +27,7 @@ public class ChargeController {
             @RequestParam(name = "username", required = false)String username
     ){
         page = page == null?1:page;
-        pageSize = pageSize == null?1:pageSize;
+        pageSize = pageSize == null?3:pageSize;
         Page<Charge> charges;
         Integer size;
 
