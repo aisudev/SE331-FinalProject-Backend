@@ -64,7 +64,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // don't create session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
-                .antMatchers("/auth/**", "/refresh", "/register/**").permitAll()
+                .antMatchers("/auth/**", "/refresh", "/register/**", "/uploadFile").permitAll()
                 .antMatchers("/admin/**", "user/roleToAdmin/**", "user/roleToDoctor/**", "user/roleToPatient/**").hasRole("ADMIN")
                 .antMatchers("/doctor/**").hasRole("DOCTOR")
                 .antMatchers("/charge/**", "/user/**", "/vaccine/**").permitAll()

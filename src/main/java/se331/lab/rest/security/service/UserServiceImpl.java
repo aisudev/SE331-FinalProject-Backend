@@ -103,6 +103,7 @@ public class UserServiceImpl implements UserService{
     public User roleToDoctor(Long id) {
         Authority authAdmin = authorityRepository.findByName(AuthorityName.ROLE_DOCTOR);
         User user = userRepository.findById(id).orElse(null);
+        System.out.println("asdasd");
         if(user == null){
             return null;
         }
