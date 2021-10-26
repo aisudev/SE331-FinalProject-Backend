@@ -23,7 +23,7 @@ public class VaccineController {
     @GetMapping("vaccine")
     public ResponseEntity<?> GetVaccines(
             @RequestParam(name = "page", required = false)Integer page,
-            @RequestParam(name = "page", required = false)Integer pageSize
+            @RequestParam(name = "pageSize", required = false)Integer pageSize
     ){
         page = page == null?1:page;
         pageSize = pageSize == null?3:pageSize;
