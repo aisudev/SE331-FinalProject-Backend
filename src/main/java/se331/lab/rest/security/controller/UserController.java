@@ -25,7 +25,7 @@ public class UserController {
     ){
         page = page == null?1:page;
         pageSize = pageSize == null?1:pageSize;
-        Page<User> users = userService.getPatients(page, pageSize);
+        Page<User> users = userService.getPatients(page-1, pageSize);
         Integer size = userService.sizeOfPatient();
 
         HttpHeaders headers = new HttpHeaders();
@@ -42,7 +42,7 @@ public class UserController {
         page = page == null?1:page;
         pageSize = pageSize == null?1:pageSize;
 
-        Page<User> users = userService.getDoctors(page, pageSize);
+        Page<User> users = userService.getDoctors(page-1, pageSize);
         Integer size = userService.sizeOfDoctor();
 
         HttpHeaders headers = new HttpHeaders();
@@ -59,7 +59,7 @@ public class UserController {
         page = page == null?1:page;
         pageSize = pageSize == null?1:pageSize;
 
-        Page<User> users = userService.all(page, pageSize);
+        Page<User> users = userService.all(page-1, pageSize);
         Integer size = userService.size();
 
         HttpHeaders headers = new HttpHeaders();
