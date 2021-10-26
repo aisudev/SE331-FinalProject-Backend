@@ -26,7 +26,7 @@ public class VaccineController {
             @RequestParam(name = "page", required = false)Integer pageSize
     ){
         page = page == null?1:page;
-        pageSize = pageSize == null?1:pageSize;
+        pageSize = pageSize == null?3:pageSize;
         Page<Vaccine> vaccines = vaccineService.all(page-1, pageSize);
 
         Integer size = vaccineService.size();
