@@ -65,12 +65,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeRequests()
                 .antMatchers("/auth/**", "/refresh", "/register/**").permitAll()
-                .antMatchers(HttpMethod.GET, "/events").permitAll()
-                .antMatchers(HttpMethod.GET, "/organizers").permitAll()
-                .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-                .antMatchers(HttpMethod.POST,"/events").hasRole("ADMIN")
-
-
+                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/doctor/**").hasRole("DOCTOR")
+                .antMatchers("/charge/**", "/user/**", "/vaccine/**").permitAll()
                 .anyRequest().authenticated();
 
         // Custom JWT based security filter
