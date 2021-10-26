@@ -50,9 +50,17 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
         vaccineDao.save(sinopharm);
         vaccineDao.save(sinovac);
 
-        List<Vaccine> vaccines = new ArrayList<>();
-        vaccines.add(pfier);
-        vaccines.add(moderna);
+        List<Vaccine> vaccines1 = new ArrayList<>();
+        vaccines1.add(pfier);
+        vaccines1.add(moderna);
+
+        List<Vaccine> vaccines2 = new ArrayList<>();
+        vaccines2.add(sinovac);
+        vaccines2.add(sinovac);
+
+        List<Vaccine> vaccines3 = new ArrayList<>();
+        vaccines3.add(sinopharm);
+        vaccines3.add(sinopharm);
 
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         Authority authPatient = Authority.builder().name(AuthorityName.ROLE_PATIENT).build();
@@ -86,7 +94,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("srisom")
                 .address("cnx")
                 .age(20)
-                .vaccines(vaccines)
+                .vaccines(vaccines1)
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
@@ -97,7 +105,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("maisom")
                 .address("cnx")
                 .age(21)
-                .vaccines(vaccines)
+                .vaccines(vaccines2)
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
@@ -108,7 +116,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("saksom")
                 .address("cnx")
                 .age(21)
-                .vaccines(vaccines)
+                .vaccines(vaccines2)
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
@@ -119,7 +127,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("pongsom")
                 .address("cnx")
                 .age(22)
-                .vaccines(vaccines)
+                .vaccines(vaccines3)
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
@@ -130,7 +138,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("kiatsom")
                 .address("cnx")
                 .age(21)
-                .vaccines(vaccines)
+                .vaccines(vaccines1)
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
@@ -141,7 +149,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .lastname("srisam")
                 .address("cnx")
                 .age(21)
-                .vaccines(vaccines)
+                .vaccines(vaccines2)
                 .enabled(true)
                 .lastPasswordResetDate(Date.from(LocalDate.of(2021, 01, 01).atStartOfDay(ZoneId.systemDefault()).toInstant()))
                 .build();
