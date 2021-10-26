@@ -99,8 +99,8 @@ public class AuthenticationRestController {
         PasswordEncoder encoder = new BCryptPasswordEncoder();
         if (userRepository.findByUsername(form.getUsername()) == null ){
             userRepository.save(User.builder()
-                    .firstname(form.getUsername())
-                    .lastname(form.getUsername())
+                    .firstname(form.getFirstname())
+                    .lastname(form.getLastname())
                     .username(form.getUsername())
                     .password(encoder.encode(form.getPassword()))
                     .img(form.getImg())

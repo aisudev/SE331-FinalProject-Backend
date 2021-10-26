@@ -11,4 +11,5 @@ public interface UserService {
     Page<User> all(Integer page, Integer pageSize);
     Integer size();
     User get(Long id);
+    User addVaccineToUser(Long id, Long vaccine_id);
 }

@@ -72,4 +72,17 @@ public class UserController {
     ){
         return ResponseEntity.ok(LabMapper.INSTANCE.getUser(userService.get(id)));
     }
+
+    @PutMapping("admin/addVaccineToUser")
+    public  ResponseEntity<?> AddVaccineToUser(
+            @RequestBody AddVaccineToUserForm form
+    ){
+        User user = userService.addVaccineToUser(form.id, form.vaccine_id);
+
+        if(user == null){
+            return ResponseEntity.badRequest().build();
+        }
+
+        return ResponseEntity.ok(LabMapper.INSTANCE.getUser(user));
+    }
 }

@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthorityDTO {
+public class VaccineDTO {
+    Long id;
     String name;
 }

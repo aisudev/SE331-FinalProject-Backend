@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import se331.lab.rest.entity.Charge;
+import se331.lab.rest.entity.Vaccine;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -52,6 +54,9 @@ public class User {
     @NotNull
     private Integer age;
 
+    @Column(name = "COMMENT", length = 1024)
+    private String comment;
+
     @Column(name = "IMG", length = 526)
     private String img;
 
@@ -67,4 +72,10 @@ public class User {
 	@Builder.Default
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Authority> authorities = new ArrayList<>();
+
+    @ManyToMany
+    private  List<Vaccine> vaccines = new ArrayList<>();
+
+    @OneToOne(mappedBy = "user")
+    Charge charge;
 }
