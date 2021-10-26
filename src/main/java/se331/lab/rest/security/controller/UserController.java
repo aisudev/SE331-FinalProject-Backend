@@ -20,8 +20,8 @@ public class UserController {
 
     @GetMapping("patients")
     public ResponseEntity<?> GetPatients(
-            @RequestParam(name = "page")Integer page,
-            @RequestParam(name = "pageSize")Integer pageSize
+            @RequestParam(name = "page", required = false)Integer page,
+            @RequestParam(name = "pageSize", required = false)Integer pageSize
     ){
         page = page == null?1:page;
         pageSize = pageSize == null?1:pageSize;
@@ -36,8 +36,8 @@ public class UserController {
 
     @GetMapping("doctors")
     public ResponseEntity<?> GetDoctors(
-            @RequestParam(name = "page")Integer page,
-            @RequestParam(name = "page")Integer pageSize
+            @RequestParam(name = "page", required = false)Integer page,
+            @RequestParam(name = "page", required = false)Integer pageSize
     ){
         page = page == null?1:page;
         pageSize = pageSize == null?1:pageSize;
@@ -53,8 +53,8 @@ public class UserController {
 
     @GetMapping("users")
     public ResponseEntity<?>GetUsers(
-            @RequestParam(name = "page")Integer page,
-            @RequestParam(name = "page")Integer pageSize
+            @RequestParam(name = "page", required = false)Integer page,
+            @RequestParam(name = "page", required = false)Integer pageSize
     ){
         page = page == null?1:page;
         pageSize = pageSize == null?1:pageSize;
