@@ -51,4 +51,9 @@ public class UserServiceImpl implements UserService{
         Authority authority = authorityRepository.findByName(AuthorityName.ROLE_DOCTOR);
         return userRepository.countByAuthoritiesContaining(authority);
     }
+
+    @Override
+    public User get(Long id) {
+        return userRepository.findById(id).orElse(null);
+    }
 }

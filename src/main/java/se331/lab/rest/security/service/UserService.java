@@ -10,4 +10,5 @@ public interface UserService {
     Integer sizeOfDoctor();
     Page<User> all(Integer page, Integer pageSize);
     Integer size();
+    User get(Long id);
 }

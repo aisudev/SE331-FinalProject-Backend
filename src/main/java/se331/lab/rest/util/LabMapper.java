@@ -16,5 +16,6 @@ public interface LabMapper {
     LabMapper INSTANCE = Mappers.getMapper(LabMapper.class);
 
     UserDTO getUser(User user);
+    List<UserDTO> getUser(List<User> user);
 
 }
