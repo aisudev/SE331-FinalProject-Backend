@@ -12,6 +12,9 @@ import se331.lab.rest.security.entity.User;
 import se331.lab.rest.security.repository.AuthorityRepository;
 import se331.lab.rest.security.repository.UserRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService{
     @Autowired
@@ -80,5 +83,28 @@ public class UserServiceImpl implements UserService{
         User user = userRepository.findById(id).orElse(null);
         user.setComment(comment);
         return userRepository.save(user);
+    }
+
+    @Override
+    public User roleToAdmin(Long id) {
+        Authority authAdmin = authorityRepository.findByName(AuthorityName.ROLE_ADMIN);
+        User user = userRepository.findById(id).orElse(null);
+        if(user == null){
+            return null;
+        }
+        List<Authority> authorities = new ArrayList<>();
+        authorities.add(authAdmin);
+        user.setAuthorities(authorities);
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User roleToDoctor(Long id) {
+        return null;
+    }
+
+    @Override
+    public User roleToPatient(Long id) {
+        return null;
     }
 }

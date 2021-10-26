@@ -13,4 +13,7 @@ public interface UserService {
     User get(Long id);
     User addVaccineToUser(Long id, Long vaccine_id);
     User updateComment(Long id, String comment);
+    User roleToAdmin(Long id);
+    User roleToDoctor(Long id);
+    User roleToPatient(Long id);
 }

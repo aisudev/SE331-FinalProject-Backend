@@ -22,7 +22,7 @@ public class UserController {
             @RequestParam(name = "pageSize", required = false)Integer pageSize
     ){
         page = page == null?1:page;
-        pageSize = pageSize == null?1:pageSize;
+        pageSize = pageSize == null?3:pageSize;
         Page<User> users = userService.getPatients(page-1, pageSize);
         Integer size = userService.sizeOfPatient();
 
@@ -38,7 +38,7 @@ public class UserController {
             @RequestParam(name = "page", required = false)Integer pageSize
     ){
         page = page == null?1:page;
-        pageSize = pageSize == null?1:pageSize;
+        pageSize = pageSize == null?3:pageSize;
 
         Page<User> users = userService.getDoctors(page-1, pageSize);
         Integer size = userService.sizeOfDoctor();
@@ -55,7 +55,7 @@ public class UserController {
             @RequestParam(name = "page", required = false)Integer pageSize
     ){
         page = page == null?1:page;
-        pageSize = pageSize == null?1:pageSize;
+        pageSize = pageSize == null?3:pageSize;
 
         Page<User> users = userService.all(page-1, pageSize);
         Integer size = userService.size();
