@@ -40,7 +40,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: tulyakai/331-securitylab:latest
+          tags: pongpanoth/331-finalback
       -
         name: prepare the docker-compose run
         run: |

@@ -16,7 +16,7 @@ services:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: password
   backend:
-    image: tkthanatorn/compo
+    image: pongpanoth/331-finalback
     ports:
       - 8999:8080
     environment:

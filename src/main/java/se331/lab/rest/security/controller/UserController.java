@@ -55,7 +55,7 @@ public class UserController {
             @RequestParam(name = "pageSize", required = false)Integer pageSize
     ){
         page = page == null?1:page;
-        pageSize = pageSize == null?3:pageSize;
+        pageSize = pageSize == null?6:pageSize;
 
         Page<User> users = userService.all(page-1, pageSize);
         Integer size = userService.size();
