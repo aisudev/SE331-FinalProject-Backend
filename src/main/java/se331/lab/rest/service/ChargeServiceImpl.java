@@ -9,6 +9,8 @@ import se331.lab.rest.entity.Charge;
 import se331.lab.rest.security.entity.User;
 import se331.lab.rest.security.repository.UserRepository;
 
+import java.util.List;
+
 @Service
 public class ChargeServiceImpl implements ChargeService{
     @Autowired
